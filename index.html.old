@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zurapong Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #181818 0%, #232a34 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      margin-bottom: 32px;
+      letter-spacing: 0.05em;
+      text-shadow: 0 2px 16px #2196f3, 0 1px 0 #000;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+    }
+
+    a,
+    .btn_fake button {
+      display: inline-block;
+      padding: 14px 32px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(90deg, #2196f3, #21cbf3);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 2px 12px rgba(33, 150, 243, 0.15);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      margin: 0 8px;
+      cursor: pointer;
+    }
+
+    a:hover,
+    .btn_fake button:hover {
+      background: linear-gradient(90deg, #21cbf3, #2196f3);
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 4px 24px rgba(33, 150, 243, 0.25);
+    }
+
+    .btn_fake {
+      display: inline-block;
+    }
+
+    .div_spin_cube {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Zurapong Website</h1>
+  <div class="nav-links">
+    <a href="fake_youtube.html">Fake Youtube</a>
+    <div class="btn_fake">
+      <button id="open-signup">Fake Signup Form</button>
+    </div>
+    <div class="div_spin_cube">
+      <a href="spin_cube.html">Spinning Cube</a>
+    </div>
+  </div>
+
+  <!-- Fake Signup Modal -->
+  <div id="signup-modal"
+    style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(24,24,24,0.85);z-index:100;align-items:center;justify-content:center;">
+    <form
+      style="background:#232a34;padding:40px 32px 32px 32px;border-radius:16px;box-shadow:0 8px 32px rgba(33,150,243,0.18);min-width:320px;max-width:90vw;display:flex;flex-direction:column;align-items:center;position:relative;">
+      <button type="button" id="close-signup"
+        style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.5rem;color:#fff;cursor:pointer;">&times;</button>
+      <h2 style="color:#fff;margin-bottom:24px;font-size:2rem;letter-spacing:0.04em;">Fake Signup</h2>
+      <input type="text" placeholder="Username" required
+        style="width:100%;padding:12px 16px;margin-bottom:18px;border-radius:6px;border:1px solid #2196f3;font-size:1rem;outline:none;">
+      <input type="email" placeholder="Email" required
+        style="width:100%;padding:12px 16px;margin-bottom:18px;border-radius:6px;border:1px solid #2196f3;font-size:1rem;outline:none;">
+      <input type="password" placeholder="Password" required
+        style="width:100%;padding:12px 16px;margin-bottom:24px;border-radius:6px;border:1px solid #2196f3;font-size:1rem;outline:none;">
+      <button type="submit"
+        style="padding:12px 32px;background:linear-gradient(90deg,#2196f3,#21cbf3);color:#fff;font-size:1.1rem;font-weight:700;border:none;border-radius:8px;box-shadow:0 2px 12px rgba(33,150,243,0.15);cursor:pointer;transition:background 0.2s;">Sign
+        Up</button>
+    </form>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('open-signup');
+    const modal = document.getElementById('signup-modal');
+    const closeBtn = document.getElementById('close-signup');
+    if (openBtn && modal && closeBtn) {
+      openBtn.onclick = () => { modal.style.display = 'flex'; };
+      closeBtn.onclick = () => { modal.style.display = 'none'; };
+      modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+    }
+  </script>
+</body>
+
+</html>
